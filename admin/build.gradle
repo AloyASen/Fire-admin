@@ -1,0 +1,33 @@
+apply plugin:'java'
+buildscript {
+  repositories {
+    jcenter()
+    // enable this to use snapshot versions of Gretty:
+    
+  } 
+}
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': versionName,
+                   'Implementation-Version': versionNumber,
+                   'Main-Class':'Hello'
+    }
+}
+
+repositories {
+  jcenter()
+  
+}
+
+dependencies {
+    compile 'com.google.firebase:firebase-admin:5.9.0'
+    compile 'org.mongodb:mongodb-driver-sync:3.7.0-rc0'
+
+  
+
+  // https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver
+  //compile group: 'org.mongodb', name: 'mongo-java-driver', version: '1.3'
+
+
+}

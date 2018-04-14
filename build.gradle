@@ -1,0 +1,9 @@
+// START SNIPPET configuration-injection
+ext {
+
+    versionName = 'Firebase DB manager'
+    versionNumber = '0.0.1-beta'
+    javaSourceCompatibility = JavaVersion.VERSION_1_8
+    javaTargetCompatibility = JavaVersion.VERSION_1_8
+}
+// END SNIPPET configuration-injection
