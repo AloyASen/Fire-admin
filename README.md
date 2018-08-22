@@ -1,21 +1,36 @@
-### why are you here ??
-this is the system being used in the local development versions of the 
-system manager for internal management of projects and promotionals scheduled to register with
-ICANN shortly . the projects are hosted on a local gitlab instance with a backed up db 
+# express-firebase
 
-## what are you up to ??
+Simple Firebase Admin Server using NodeJS.
 
-you can get these same files and make a new nest for you team that will be using this code 
+You used Firebase for auth, realtime DB, and all. Finally you need your own server
+to integrate with 3rd party services, or maybe custom token, or you need server-side operations.
 
-### How to ::
+> Have existing express server? Try out [Express Firebase Middleware](https://github.com/antonybudianto/express-firebase-middleware)
 
-this code is made using express generator and the view is being rendered out using Jade 
+## How to use
+1. Clone this repo and change directory to the cloned folder
+2. Install the packages
 
-all the dependencies are there in the package.json file in the current directory
+   ```sh
+   npm install
+   ```
 
-npm install // yarn install
+3. You need to download your Firebase Service Account json file, please follow the official [instruction](https://firebase.google.com/docs/admin/setup).
 
-=================---------------================--------------=========
-after all the dependencies are resolved successfully the server can be fired using 
+    Put the file at project root.
 
-npm start  // yarn starn 
+    > :warning: Always make sure the JSON file is git-ignored!
+
+4. Copy `.env.example` file and rename it to `.env` at project root.
+
+    Change the dummy FIREBASE_DATABASE_URL value with your Firebase project databaseURL, you can find it on your Firebase Console
+
+5. Then start the server
+    ```sh
+    npm start
+    ```
+6. It should log successfully, and you can start using Firebase Admin SDK
+7. For further reading, please visit [Express Firebase Middleware repo](https://github.com/antonybudianto/express-firebase-middleware)
+
+## License
+MIT
