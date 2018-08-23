@@ -3,9 +3,13 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+require('dotenv').config(); //load the environmet variables into process.env
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+
+
+
+var databaseRouter = require('./routes/dbase');
+var messagingRouter = require('./routes/mesg');
 
 var app = express();
 
@@ -19,8 +23,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/', messagingRouter);
+app.use('/db', databaseRouter);
+
+//add this varible for middleware
+const admin = require('./firebase-admin');
+
+//set the host port properties to allow custom beheaviour
+const port = process.env.APP_PORT || 8080;
+const host = process.env.APP_HOST || '127.0.0.1';
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -37,5 +48,9 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+//start listening on the endpoint
+app.listen(port, host);
+console.log(`Server listening at ${host}:${port}`);
 
 module.exports = app;
