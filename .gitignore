@@ -125,6 +125,8 @@ typings/
 # dotenv environment variables file
 .env
 
+#firebase service account details
+service_account_main.json
 
 
 # End of https://www.gitignore.io/api/git,node

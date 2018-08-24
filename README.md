@@ -35,7 +35,7 @@ to integrate with 3rd party services, or maybe custom token, or you need server-
 ## License
 MIT
 
-Copyright (c) 2016 Antony Budianto
+Copyright (c) 2016 Aloy A Sen
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
